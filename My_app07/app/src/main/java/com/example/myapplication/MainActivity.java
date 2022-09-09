@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 iv1 = itemView.findViewById(R.id.fruta);
             }
 
-            public void imprimir(int position) {
+            public void imprimir(int position) {//asignamos a cada elemento la imagen y texto que le corresponde
                 tv1.setText(fruta[position]);
                 tv2.setText(String.valueOf(precios[position]));
                 iv1.setImageResource(fotos[position]);

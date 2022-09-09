@@ -17,25 +17,24 @@
         android:layout_weight="0"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="Nombre"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView_precio"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:scrollbarSize="75dp"
+            android:text="Precio"
+            android:textSize="15sp" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView_precio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:scrollbarSize="75dp"
-        android:text="Precio"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:text="Nombre"
-        android:textSize="15sp" />
 
 </LinearLayout>
