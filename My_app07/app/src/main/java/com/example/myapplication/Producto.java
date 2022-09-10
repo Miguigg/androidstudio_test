@@ -2,12 +2,12 @@ package com.example.myapplication;
 
 public class Producto {
     private String nombre;
-    private double precio;
-    public Producto(String nombre,double precio){
+    private String precio;
+    public Producto(String nombre,String precio){
         this.nombre = nombre;
         this.precio = precio;
     }
-    public double getPrecio(){
+    public String getPrecio(){
         return precio;
     }
     public String getNombre(){
