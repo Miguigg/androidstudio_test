@@ -6,9 +6,6 @@ public class ClientModel {
     private int age;
     private boolean isActive;
 
-    public ClientModel(int id,String name,int age,boolean isActive) {
-        this.id = id;
-    }
 
     public int getId() {
         return id;

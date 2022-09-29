@@ -21,24 +21,28 @@ public class AdminSqlite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {//se ejecuta solamente la primera vez
-       String sentencia = "CREATE TABLE " + CUSTOMER_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ CUSTOMER_NAME + " TEXT, "+ CUSTOMER_AGE + " INT, "+ ACTIVE + " BOOL )";
+       String sentencia = "CREATE TABLE " + CUSTOMER_TABLE + " ("+ ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ CUSTOMER_NAME + " TEXT, "+ CUSTOMER_AGE + " INT, "+ ACTIVE + " BOOL)";
        db.execSQL(sentencia);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
     }
-    public boolean addOne(ClientModel c){
+    public String addOne(ClientModel c){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();//objetos que cogen dos valores "value":"Name"
         cv.put(CUSTOMER_NAME,c.getName());
         cv.put(CUSTOMER_AGE,c.getAge());
         cv.put(ACTIVE,c.isActive());
+        String toret = c.getName() + c.getAge() + c.isActive();
         long exito = db.insert(CUSTOMER_TABLE,null,cv);//donde, que datos y nullColumnHack que es el valor quemete si la columna es vacia
-        if(exito==-1){
+
+        return toret;
+
+        /*if(exito==-1){
             return false;
         }else{
             return true;
-        }
+        }*/
     }
 }

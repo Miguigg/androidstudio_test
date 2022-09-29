@@ -49,17 +49,21 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClientModel c;
-                if(name.getText() != null){
+                String myNAme =name.getText().toString();
+                int myAge =Integer.parseInt(age.getText().toString());
+                boolean actv = sw1.isChecked();
+                ClientModel c = new ClientModel();
+                if(name.getText().toString() != null){
                     try{
-                        c = new ClientModel(-1,name.getText().toString(),Integer.parseInt(age.getText().toString()),sw1.isChecked());
+                        c.setAge(myAge);
+                        c.setName(myNAme);
+                        c.setActive(actv);
                         Toast.makeText(MainActivity.this,c.toString(),Toast.LENGTH_LONG).show();
-                    }catch (Exception e){
-                        Toast.makeText(MainActivity.this,"Error al crear "+e,Toast.LENGTH_LONG).show();
-                        c = new ClientModel(-1,"err",0,false);
+                    }catch (Exception e) {
+                        Toast.makeText(MainActivity.this, "Error al crear " + e, Toast.LENGTH_LONG).show();
                     }
                     AdminSqlite helper = new AdminSqlite(MainActivity.this);
-                    boolean b = helper.addOne(c);
+                    String b = helper.addOne(c);
                     Toast.makeText(MainActivity.this,"Result:" + b,Toast.LENGTH_LONG).show();
                 }
             }
